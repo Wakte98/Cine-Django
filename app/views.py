@@ -133,9 +133,8 @@ def new_pelicula(request):
             peli = form.save(commit=False)
             peli.pub_date=datetime.now()
             peli.save()
-            #return redirect('detail', pk=question_id)
-            #return render(request, 'polls/index.html', {'title':'Respuestas posibles','question': question})
+
     else:
         form = InsertarPeliculaForm()
-    return render(request, 'app/new_pelicula.html', {'form': form})
+    return render(request, 'app/new_pelicula.html', {'message': 'Rellena los campos para insertar una película','tittle': 'Insertar película',  'form': form})
 
